@@ -8,7 +8,9 @@ class Window(QMainWindow):
         super(Window, self).__init__()
 
         self.setWindowTitle("Блокнот")
-        self.setGeometry(500, 250, 600, 400)
+        self.setGeometry(500, 250, 300, 300)
+
+        self.new_text = QtWidgets.QLabel(self)
 
         self.main_text = QtWidgets.QLabel(self)
         self.main_text.setText("Ну оооочень длинная надпись")
@@ -22,7 +24,9 @@ class Window(QMainWindow):
         self.btn.clicked.connect(self.add_label)
 
     def add_label(self):
-        print('Some console text')
+        self.new_text.setText("New text")
+        self.new_text.move(75, 75)
+        self.new_text.adjustSize()
 
 
 def application():
